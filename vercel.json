@@ -6,37 +6,7 @@
   "framework": "nextjs",
   "functions": {
     "app/api/**/*.{js,ts}": {
-      "runtime": "nodejs18.x"
+      "runtime": "nodejs20.x"
     }
-  },
-  "redirects": [
-    {
-      "source": "/admin",
-      "destination": "/admin/dashboard",
-      "permanent": false
-    }
-  ],
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-store, must-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/uploads/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control", 
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production"
   }
 }
